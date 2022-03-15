@@ -1,10 +1,14 @@
 # ee6610
 Group report of NTU EE6610 21S2.
 
-For git newcomers, you can refer [here](https://backlog.com/git-tutorial/cn/intro/intro1_1.html) :) 
+For git newcomers, you can refer [here](https://backlog.com/git-tutorial/cn/intro/intro1_1.html) :)
 
-For commit messages, you can refer [here](https://zhuanlan.zhihu.com/p/182553920) 
+This is a branch for public recommended references. 
 
-BTW, anyone can use this *.md* or *Issues* for free dicussions. For example: 
+## Materials 
 
-Enjoy the course! --YJY
+Textbook: Fundamentals of Microsystems Packaging by Rao R. Tummala (z-lib.org)
+
+[UCIe website](https://www.uciexpress.org/) 
+
+UCIe White Paper
