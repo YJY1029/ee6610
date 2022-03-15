@@ -12,3 +12,5 @@ Textbook: Fundamentals of Microsystems Packaging by Rao R. Tummala (z-lib.org)
 [UCIe website](https://www.uciexpress.org/) 
 
 UCIe White Paper
+
+UCIe Specification
