@@ -31,6 +31,13 @@
 \usepackage[utf8]{inputenc}
 \usepackage{mathptmx} %Times Font
 
+%add for myself
+\usepackage{fontspec}
+\usepackage{times}
+\usepackage{courier}
+\setmainfont{TeX Gyre Termes}
+\usepackage{textcomp}
+
 %==== Header and Footer configure ====
 % Define the plain pagestyle used by most chapters
 \fancypagestyle{plain}{
@@ -53,11 +60,14 @@
 \begin{document}
 \fontdimen2\font=0.5em% inter word space
 %==== FRONT PART====
-\include{Title/coverpage} % Coverpage
-\include{Title/titlepage} % Titlepage
-\include{Title/SoO} % Titlepage
-\include{Title/SDS} % Titlepage
-\include{Title/AAS} % Titlepage
+
+%comment begin 
+%\include{Title/coverpage} % Coverpage
+%\include{Title/titlepage} % Titlepage
+%\include{Title/SoO} % Titlepage
+%\include{Title/SDS} % Titlepage
+%\include{Title/AAS} % Titlepage
+%comment end
 
 %\begingroup
 %\let\cleardoublepage\clearpage
@@ -68,21 +78,25 @@
 \tableofcontents
 \newpage
 
-\include{Front/Abstract}
-\include{Front/Acknowledgement}
+%comment begin 
+%\include{Front/Abstract}
+%\include{Front/Acknowledgement}
+%comment end 
 \include{Front/Acronyms}
 \include{Front/Symbols}
 
 
-\renewcommand{\listfigurename}{\centering List of Figures}
-\listoffigures
-\addcontentsline{toc}{chapter}{Lists of Figures}
-\newpage
-
-\renewcommand{\listtablename}{\centering List of Tables}
-\listoftables 
-\addcontentsline{toc}{chapter}{Lists of Tables}
-\newpage
+%comment begin 
+%\renewcommand{\listfigurename}{\centering List of Figures}
+%\listoffigures
+%\addcontentsline{toc}{chapter}{Lists of Figures}
+%\newpage
+%
+%\renewcommand{\listtablename}{\centering List of Tables}
+%\listoftables 
+%\addcontentsline{toc}{chapter}{Lists of Tables}
+%\newpage
+%comment end 
 
 %\endgroup
 
@@ -91,10 +105,14 @@
 \pagenumbering{arabic}
 \include{Chapter1/Chapter1}
 \include{Chapter2/Chapter2}
-\include{Chapter3/Chapter3}
-\include{Chapter4/Chapter4}
-\include{Chapter5/Chapter5}
-\include{Chapter6/Chapter6}
+
+%comment begin 
+%\include{Chapter3/Chapter3}
+%\include{Chapter4/Chapter4}
+%\include{Chapter5/Chapter5}
+%\include{Chapter6/Chapter6}
+%comment begin 
+
 %==== ENDING PART ===
 
 \renewcommand\bibname{References}
@@ -104,6 +122,8 @@
 \end{spacing}
 \newpage
 
-\include{Appendix/appendix}
+%comment begin 
+%\include{Appendix/appendix}
+%comment end 
 %==== END OF ALL ===
 \end{document}
