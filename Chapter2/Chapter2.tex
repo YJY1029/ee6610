@@ -19,7 +19,50 @@ assembly techniques (surface mount, chip and wire) 9.11 p.11 \cite{chen2006vlsi}
 
 \section{Wiring}
 
-conductor materials: 9.9 p.220. \cite{chen2006vlsi}
+Wiring in MCM supports one of its critical funcitons: to provide both signal interconnects for the chips within the package and an interface between the module itself and the outer environment. In current industrial applications, there are three mainstream metals for MCM wiring fabrication: Al (Aluminum), Cu (copper) and Au (gold). 
+
+\begin{enumerate}
+    \item Al is well known for its low fabrication cost and a proper oxidization resistivity. It's easy to sputter and evaporate Al onto the intended surface, but the difficulty in electropolation limits its flexibility. 
+    \item Cu has a significantly larger conductivity and a better electromigration resistivity compared with Al, and it's also very flexible in deposition methods. However, oxidization on the surface of copper makes it hard to adhere to other materials, especially dielectrics and other wires. 
+    \item Au has the highest conductivity among these materials, making it very suitable for thin-film fabrication. What's more, it has a faily good deposition method flexibility, though its adhesion is poor so that a Ti or Ti/W layer is always needed. Another critical shortcoming is its high cost. 
+\end{enumerate} 
+
+Directly related to the wiring fabrication, the conductor materials should be determined in accordance with the design, electrical requirements and process requirements. Among numerous properties of a given material, conductivity and reliability are the most important towards fulfilling the specification. \cite{chen2006vlsi}
+
+\textit{There are also other various types of wiring materials... }
+
+\textit{In the previous chapter, a key considerations for wiring design has been introduced: the wiring density.} In the design flow of an MCM, the need to determine its size usually leads to a \textit{wireability analysis}. 
+
+A wireability analysis includes considerations about three parameters of this design: \textit{wiring demand} (D), \textit{wiring capacity} (C), \textit{average wire length} and \textit{connectivity}. 
+
+The wiring demand refers to the \underline{required} amount of wiring for a given circuit's interconnection, while the wiring capacity indicates the \underline{maximum available} amount. The relationship between them can be expressed as follows: 
+
+\begin{equation}
+    \label{eq.demand} 
+    D=\epsilon C
+\end{equation}
+
+where $\epsilon$ stands for the wiring efficiency with a circuit specified typical value between 30\% to 70\%. Neglecting via and through holes, the total wiring capacity $C_T$ can be described through the following equation, for a given MCM: 
+
+\begin{equation}
+    \label{eq.capacity}
+    C_T=\frac{P_P\times N_T}{P_S}
+\end{equation}
+
+where $P_S$ is the mininum signal line pitch; $P_P$ is the pitch size; $N_T$ is the number of wiring layers. 
+
+The calculation of wiring demand, on the other hand, the average length per interconnection $\overline{L}$, or the Manhattan length, should be estimated beforehand. A classical estimation method by Rickert is 
+
+\begin{equation}
+    \label{eq.rickert}
+    \overline{L}=0.77P_PN_C^{0.245}
+\end{equation}
+
+where $N_C$ is the number of chips to be interconnected. 
+
+\textit{To be continued, on L calculation and wiring demand calculation. Then Rent's rule. } 
+
+\textit{Also, \underline{emphasize} their importance}
 
 wiring design: 8.6 p.338. \cite{tummala2001fundamentals}
 
