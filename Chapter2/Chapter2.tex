@@ -5,21 +5,40 @@
 \begin{spacing}{1.5}
 \setlength{\parskip}{0.3in}
 
-After an introduction on the development history and a brief on design criteria, this chapter goes deeper into reviewing design methodologies of MCM. For the rest of this chapter, the analysis of MCM will focus on specific components. Through the explanations for key methodologies, a detailed view on MCM design will be given. 
-
-\section{Performance Parameters} 
-
-
+After an introduction on the development history and a brief on design criteria, this chapter focuses on specific components. For the rest of this chapter, the analysis of MCM will go deeper into explanations for key MCM design methodologies, thus giving a detailed view on MCM design. 
 
 \section{Package Style}
 
-The package style refers to the macro arrangement for the whole MCM, determining the existances of specific conponents. Classical choices of package styles include 
+assembly techniques (surface mount, chip and wire) 9.11 p.223 
 
-assembly techniques (surface mount, chip and wire) 9.11 p.11 \cite{chen2006vlsi} 
+Assembly, the macro arrangement of MCM structure, determines existances of specific conponents. After several decades of MCM development, various methods of assembly have been implemented, with costs and performances ranging from low to high. 
+
+Traditionally, industrial attention has been paid on the surface-mount assembly method, which provides a considerable performance with the lowest cost. This technique solders pre-packages components onto intended substrates to form the overall module. Many package styles can be categorized as this method: SIP, DIP, etc. 
+
+To integrate circuits and components onto the substrate via expoxy attachment and wire bonding provides another method with higher density as well as a very low interconnect electronic circuit parasitics. This is called the chip-and-wire assembly, and it can be implemented through various package styles, e.g., epoxy seal, metal package. 
+
+The above techniques can also be applied at the same time to form a hybrid package. \cite{licari1998hybrid}
+
+Three main methods for IC die attachment are provided in current industries: wirebond, flip chip and TAB. \cite{bogatin1997roadmaps} 
+
+%\begin{enumerate}
+%    \item 
+%\end{enumerate}
+
+Regarding to the thermal design mentioned in the previous part, it's important to take the heat spreader into consideration. 
+
+e.g.
+
+• Epoxied directly to the BeCu heat spreader through a cutout in the board
+• Epoxied to the head spreader, through a cutout, via a thermally conductive submount, to electrically isolate the die from the heat spreader
+
+The package style of an MCM should be designed according to its practical usage. Major considerations towards the design scheme should include and should not be limited to: on the frontend, the general function, purpose, interconnects, testability, available assembly techniques, active elements configurations; on the backend, placement, routing, via minimization, tree searching, layer estimation, potential failure risks, reliability. 
+
+Hence, during the design flow, careful attention must be paid on the arrangements of these technologies, so that appropriate ones can be applied on appropriate places. \cite{chen2006vlsi} 
 
 \section{Wiring}
 
-Wiring in MCM supports one of its critical funcitons: to provide both signal interconnects for the chips within the package and an interface between the module itself and the outer environment. In current industrial applications, there are three mainstream metals for MCM wiring fabrication: Al (Aluminum), Cu (copper) and Au (gold). 
+Wiring in MCM supports one of its critical funcitons: to provide both signal interconnects for the chips within the package and an interface between the module itself and the outer environment. In current industrial applications, there are three mainstream metals for MCM wiring fabrication: Al (aluminum), Cu (copper) and Au (gold). 
 
 \begin{enumerate}
     \item Al is well known for its low fabrication cost and a proper oxidization resistivity. It's easy to sputter and evaporate Al onto the intended surface, but the difficulty in electropolation limits its flexibility. 
@@ -58,13 +77,35 @@ The calculation of wiring demand, on the other hand, the average length per inte
     \overline{L}=0.77P_PN_C^{0.245}
 \end{equation}
 
-where $N_C$ is the number of chips to be interconnected. 
+where $N_C$ is the number of chips to be interconnected. \cite{rickert1989design} 
 
-\textit{To be continued, on L calculation and wiring demand calculation. Then Rent's rule. } 
+The number of I/O pins is another crucial parameter in the design stage of an MCM. The well-known Rent's Rule gives a very useful estimation on this 
+
+\begin{equation}
+    \label{eq.rent}
+    N_{IO}=ag^b
+\end{equation}
+
+In the above equation, if a specific chip is given, $N_{IO}$ is its anticipated number of I/Os; $g$ is its number of gates; $a$ and $b$ are the average connection number per I/O, or the Rent's coefficient, and the Rent's exponent respectively. \cite{landman1971pin} $a$ and $b$ are determined emperically and several typical values are given below. \cite{tummala2001fundamentals}
+
+\begin{table}[ht]
+    \centering 
+    \caption{Rent's coefficients and exponents for specific devices/systems} 
+    \label{tb.rent} 
+    \begin{tabular}[t]{lcc}
+        \toprule 
+        Type & Rent's coefficient, $a$ & Rent's exponent, $b$ \\ 
+        \midrule 
+        DRAM & 6.20 & 0.085 \\
+        SRAM & 6.00 & 0.120 \\ 
+        Microprocessors & 0.82 & 0.450 \\ 
+        Random Logi & 1.90 & 0.500 \\
+        Computer Systems & 2.50 & 0.600 \\ 
+        \bottomrule
+    \end{tabular}
+\end{table}
 
 \textit{Also, \underline{emphasize} their importance}
-
-wiring design: 8.6 p.338. \cite{tummala2001fundamentals}
 
 chip and wire assembly
 
@@ -72,7 +113,7 @@ chip and wire assembly
 
 The whole chapter 9 \cite{chen2006vlsi}
 
-Substrate is another critical factor in MCM design. 
+For any packaging design, the substrate influences almost every part of its overall performance. 
 
 C: thick-film, HTCC, LTCC. D: inorganic dielectrics on Si, organic dielectric on Si. L: laminated board
 
