@@ -25,9 +25,7 @@ Three main methods for IC die attachment are provided in current industries: wir
 %    \item 
 %\end{enumerate}
 
-Regarding to the thermal design mentioned in the previous part, it's important to take the heat spreader into consideration. 
-
-e.g.
+Regarding to the thermal design mentioned in the previous part, it's important to take the heat spreader into consideration, e.g.
 
 • Epoxied directly to the BeCu heat spreader through a cutout in the board
 • Epoxied to the head spreader, through a cutout, via a thermally conductive submount, to electrically isolate the die from the heat spreader
@@ -35,6 +33,8 @@ e.g.
 The package style of an MCM should be designed according to its practical usage. Major considerations towards the design scheme should include and should not be limited to: on the frontend, the general function, purpose, interconnects, testability, available assembly techniques, active elements configurations; on the backend, placement, routing, via minimization, tree searching, layer estimation, potential failure risks, reliability. 
 
 Hence, during the design flow, careful attention must be paid on the arrangements of these technologies, so that appropriate ones can be applied on appropriate places. \cite{chen2006vlsi} 
+
+%\textit{There is also some information on MCM Technologies part. \cite{bogatin1997roadmaps} And package stack, etc. (Appendix 3) }
 
 \section{Wiring}
 
@@ -107,17 +107,37 @@ In the above equation, if a specific chip is given, $N_{IO}$ is its anticipated 
 
 \textit{Also, \underline{emphasize} their importance}
 
-chip and wire assembly
-
 \section{Substrate}
 
 The whole chapter 9 \cite{chen2006vlsi}
 
-For any packaging design, the substrate influences almost every part of its overall performance. 
+For any packaging design, the substrate influences almost every part of its overall performance, and as a fact determines the type of the MCM package. In this part, the substrate material and the substrate configuration are introduced, which as two crucial concepts lead to the next chapter's introduction on basic fabrication processes. 
 
-C: thick-film, HTCC, LTCC. D: inorganic dielectrics on Si, organic dielectric on Si. L: laminated board
+%C: thick-film, HTCC, LTCC. D: inorganic dielectrics on Si, organic dielectric on Si. L: laminated board. 
 
-substrate technologies (how to carry dies) 9.10 p.220 \cite{chen2006vlsi} 
+\textit{As is introduced, MCMs can be categorized according to the substrate it adopts: MCM-L, MCM-C and MCM-D. }
+
+MCM-L uses plastic laminate as the substrate, imitating properties of PWBs. (chen2006vlsi, 9.2.1)
+
+MCM-C adopts think-film substrate, or ceramic technologies, including high-temperature cofired ceramic (HTCC) and low-temperature cofired ceramic (LTCC). \textit{Introduction on HTCC and LTCC substrates. (chen2006vlsi, 9.3)}
+
+MCM-D, the advanced ones compared with the other two categories, uses inorganic dielectrics or organic polymers as the thin-film substrate. 
+
+Thin-film packages have evolved to a much greater extent with polymeric materials. The capability offered by polymers include a lower dielectric constant, the ability to form thicker layers with higher speeds, and lower cost of deposition. Polymer dielectrics have been used as insulating layers in recent microelectronics packaging.
+
+The thin-film substrate must have a flat and polished surface in order to build upon. The substrate should be inert to the process chemicals, gas atmospheres, and temperatures used during the fabrication of the interconnect. Mechanical properties are particularly important because the substrate must be strong enough to withstand handling, thermal cycling, and shock. The substrate must also meet certain CTE constraints because it is in contact with very large silicon chips on one side and with the package on the other side [11,12]. Thermal conductivity is another important aspect when heat-generating, closely spaced chips need that  eat conducting medium. It is informative to state that high-density, large-area processing has generated interest in glass as a carrier material. 
+
+Substrates can be used in a manner similar to PWBs, in which components are mounted onto the assembly. Such configurations are referred to as patterned substrate approaches (Fig.3.14-a is a particular example illustrating distinct interconnecting and mechanical substrates).
+
+A variation of this configuration, sometimes used for power devices, is referred to as the recessed patterned substrate and is shown in Fig.3.14-b. In this case, access holes are formed through the interconnecting substrate, resulting in a more intimate substrate contact and, therefore, lower thermal resistance.
+
+A fundamentally different substrate configuration results when the interconnection manifold is created over the substrate that contains the components, as shown in Fig.3.14-c. This approach is referred to as patterned overlay. In this case, components are recessed into a planarized substrate, which serves as a starting surface onto which multiple levels of interconnects are created. 
+
+The component-attach or element-attach approaches are defined as the explicit schemes for which components are mechanically and electrically attached to the substrate. The relevant approaches which can be used are: wirebonding, TAB \& flip-TAB, flip-chip, patterned overlay and with conductive adhesives. The first ones were already presented in the previous lessons. We shall briefly present here only the last ones.
+
+The patterned overlay defines interconnects metallurgically joined to component bond pads as part of the intrinsic process used to form interconnects. Thus, both the substrate and the chip attachment approach are defined simultaneously. Chip scale-packaging approaches employ a similar method, namely wafer-level packaging. One difference between wafer-level approaches and more generalized patterned overlay approaches is that the former is applied to entire wafers, as opposed to heterogeneous arrangements of individual components. 
+
+The use of conductive adhesives permits rapid attachment of components to substrates at low temperatures. In conductive adhesives, conductive particles are loaded into a polymer matrix, which, upon curing, forms a conductive bridge. The technique is commonly applied in low-cost, low-performance
 
 %=== END OF CHAPTER TWO ===
 \end{spacing}
