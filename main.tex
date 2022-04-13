@@ -41,11 +41,11 @@
 %==== Header and Footer configure ====
 % Define the plain pagestyle used by most chapters
 \fancypagestyle{plain}{
-\fancyhf{} % Clear header footer
-\fancyhead[R]{\bf \small \textsl{\nouppercase{\leftmark}} \vspace{0.1in}}
-\fancyfoot[R]{\thepage}
-% Set the right side of the footer to be the page number
-\renewcommand{\headrulewidth}{2pt}
+	\fancyhf{} % Clear header footer
+	\fancyhead[R]{\bf \small \textsl{\nouppercase{\leftmark}} \vspace{0.1in}}
+	\fancyfoot[R]{\thepage}
+	% Set the right side of the footer to be the page number
+	\renewcommand{\headrulewidth}{2pt}
 }
 
 %==== Overall Config ====
@@ -58,72 +58,70 @@
 
 
 \begin{document}
-\fontdimen2\font=0.5em% inter word space
-%==== FRONT PART====
-
-%comment begin 
-%\include{Title/coverpage} % Coverpage
-%\include{Title/titlepage} % Titlepage
-%\include{Title/SoO} % Titlepage
-%\include{Title/SDS} % Titlepage
-%\include{Title/AAS} % Titlepage
-%comment end
-
-%\begingroup
-%\let\cleardoublepage\clearpage
-
-\pagenumbering{roman}
-
-\renewcommand*\contentsname{\centering Table of Contents}
-\tableofcontents
-\newpage
-
-%comment begin 
-%\include{Front/Abstract}
-%\include{Front/Acknowledgement}
-%comment end 
-\include{Front/Acronyms(template)}
-\include{Front/Symbols(template)}
-
-
-%comment begin 
-%\renewcommand{\listfigurename}{\centering List of Figures}
-%\listoffigures
-%\addcontentsline{toc}{chapter}{Lists of Figures}
-%\newpage
-%
-%\renewcommand{\listtablename}{\centering List of Tables}
-%\listoftables 
-%\addcontentsline{toc}{chapter}{Lists of Tables}
-%\newpage
-%comment end 
-
-%\endgroup
-
-%==== MAIN PART ====
-
-\pagenumbering{arabic}
-\include{Chapter1/Chapter1}
-\include{Chapter2/Chapter2}
-\include{Chapter3/Chapter3}
-
-%comment begin 
-%\include{Chapter4/Chapter4}
-%\include{Chapter5/Chapter5}
-%\include{Chapter6/Chapter6}
-%comment begin 
-
-%==== ENDING PART ===
-
-\renewcommand\bibname{References}
-\bibliographystyle{unsrt}
-\begin{spacing}{1.5}
-\bibliography{Ref/References}
-\end{spacing}
-\newpage
-
-%comment begin 
-%\include{Appendix/appendix}
-%comment end 
-%==== END OF ALL ===
+	\fontdimen2\font=0.5em% inter word space
+	%==== FRONT PART====
+	
+	%comment begin 
+	\include{Title/coverpage} % Coverpage
+	%\include{Title/titlepage} % Titlepage
+	%\include{Title/SoO} % Titlepage
+	%\include{Title/SDS} % Titlepage
+	%\include{Title/AAS} % Titlepage
+	%comment end
+	
+	%\begingroup
+	%\let\cleardoublepage\clearpage
+	
+	\pagenumbering{roman}
+	
+	\renewcommand*\contentsname{\centering Table of Contents}
+	\tableofcontents
+	\newpage
+	
+	%comment begin 
+	%\include{Front/Abstract}
+	%\include{Front/Acknowledgement}
+	%comment end 
+	\include{Front/Acronyms}
+	\include{Front/Symbols}
+	
+	
+	\renewcommand{\listfigurename}{\centering List of Figures}
+	\listoffigures
+	\addcontentsline{toc}{chapter}{Lists of Figures}
+	\newpage
+	
+	\renewcommand{\listtablename}{\centering List of Tables}
+	\listoftables 
+	\addcontentsline{toc}{chapter}{Lists of Tables}
+	\newpage
+	
+	%\endgroup
+	
+	%==== MAIN PART ====
+	
+	\pagenumbering{arabic}
+	\include{Chapter1/Chapter1}
+	\include{Chapter2/Chapter2}
+	\include{Chapter3/Chapter3}
+	
+	%comment begin 
+	%\include{Chapter4/Chapter4}
+	%\include{Chapter5/Chapter5}
+	%\include{Chapter6/Chapter6}
+	%comment begin 
+	
+	%==== ENDING PART ===
+	
+	\renewcommand\bibname{References}
+	\bibliographystyle{unsrt}
+	\begin{spacing}{1.5}
+		\bibliography{Ref/References}
+	\end{spacing}
+	\newpage
+	
+	%comment begin 
+	%\include{Appendix/appendix}
+	%comment end 
+	%==== END OF ALL ===
 \end{document}
