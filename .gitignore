@@ -1,4 +1,5 @@
 vsbuild/*
+src/*
 *.aux 
 main.bbl 
 main.blg 
